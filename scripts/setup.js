@@ -1,11 +1,19 @@
 const inquirer = require('inquirer');
-let setup = {};
-
+const replace = require('replace-in-file');
+const setup = {
+    REPLACE_PACKAGE_NAME: '%%%PACKAGE_NAME%%%',
+    REPLACE_THEME_NAME: '%%%THEME_NAME%%%',
+    REPLACE_AUTHOR: '%%%AUTHOR_NAME%%%',
+    REPLACE_AUTHOR_URI: '%%%AUTHOR_URI%%%'
+};
 const updatePaths = [
+    'package.json',
     'src/index.php',
     'src/functions.php',
     'src/footer.php',
     'src/header.php',
+    'src/scss/style.scss',
+    'src/scss/_vars.scss',
 ];
 
 const validatePackageName = (input) => {
