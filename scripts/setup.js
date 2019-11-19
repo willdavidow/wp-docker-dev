@@ -1,12 +1,12 @@
 const inquirer = require('inquirer');
 const replace = require('replace-in-file');
-const setup = {
+const replacements = {
     REPLACE_PACKAGE_NAME: '%%%PACKAGE_NAME%%%',
     REPLACE_THEME_NAME: '%%%THEME_NAME%%%',
     REPLACE_AUTHOR: '%%%AUTHOR_NAME%%%',
     REPLACE_AUTHOR_URI: '%%%AUTHOR_URI%%%'
 };
-const updatePaths = [
+const files = [
     'package.json',
     'src/index.php',
     'src/functions.php',
@@ -27,28 +27,56 @@ const validatePackageName = (input) => {
 const questions = [
     {
         type: 'input',
-        name: 'Package Name',
+        name: 'packageName',
         message: "WP theme package name? (ex. package-name)",
         validate: validatePackageName,
     },
     {
         type: 'input',
-        name: 'Theme Name',
+        name: 'themeName',
         message: "WP theme name? (ex. Theme Name)",
     },
     {
         type: 'input',
-        name: 'Author Name',
+        name: 'authorName',
         message: "Theme author name (ex. Biff Tannen)?",
     },
     {
         type: 'input',
-        name: 'Author URI',
+        name: 'authorURI',
         message: "Theme author URI? (ex. www.bifftannen.info)",
     },
 ];
+
+const updatePaths = (answers) => {
+    console.log(replace.sync({
+        files,
+        from: replacements.REPLACE_AUTHOR,
+        to: answers.authorName,
+        dry: true,
+    }));
+    console.log(replace.sync({
+        files,
+        from: replacements.REPLACE_AUTHOR_URI,
+        to: answers.authorURI,
+        dry: true,
+    }));
+    console.log(replace.sync({
+        files,
+        from: replacements.REPLACE_PACKAGE_NAME,
+        to: answers.packageName,
+        dry: true,
+    }));
+    console.log(replace.sync({
+        files,
+        from: replacements.REPLACE_THEME_NAME,
+        to: answers.themeName,
+        dry: true,
+    }));
+};
   
 inquirer.prompt(questions)
     .then(answers => {
-        setup = answers;
+        // setup = answers;
+        updatePaths(answers);
     });
