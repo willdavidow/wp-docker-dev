@@ -1,15 +1,21 @@
 <?php
 /**
- *
- * @package YOUR_THEME_NAME
- * @since YOUR_THEME_NAME 1.0
+ * Template Footer
+ * 
+ * @package %%%PACKAGE_NAME%%%
+ * @since 1.0.0
  */
 ?>
 
-        <footer class="global-footer">
+</div>
 
-        </footer>
-        </div>
-        <?php wp_footer();?>
-    </body>
+<footer id="colophon" class="site-footer">
+    footer
+</footer>
+
+</div>
+
+<?php wp_footer(); ?>
+
+</body>
 </html>

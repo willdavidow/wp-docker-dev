@@ -1,32 +1,33 @@
 <?php
 /**
- * Staley Point functions and definitions
+ * %%%THEME_NAME%%% functions and definitions
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
+ * @since 1.0.0
  */
 
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
+if ( ! function_exists( 'theme_setup' ) ) :
 
-// ini_set('SMTP', 'smtp.sendgrid.net');
-// ini_set('smtp_port', 587); 
+    function theme_setup() {
+    
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+            'primary' => __( 'Primary Menu', '%%%PACKAGE_NAME%%%' ),
+            'footer' => __('Footer Menu', '%%%PACKAGE_NAME%%%' )
+        ) );
+    }
+    add_action( 'after_setup_theme', 'theme_setup' );
+    
+endif;
+    
+
 /*
- * DEV-ONLY SETTINGS
- */
+    * Enqueue scripts and styles.
+    */
+function theme_styles_scripts() {
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_script('app-main', get_template_directory_uri() . '/app.bundle.js', null, null, true);
+}
 
-// Suppress admin bar
+add_action( 'wp_enqueue_scripts', 'theme_styles_scripts' );
 
-add_filter('show_admin_bar', '__return_false'); // comment out if you need the admin bar to display
-
-// allow thumbbnails 
-add_theme_support('post-thumbnails');
-
-/*
- * Load all functions from 'functions' folder
- */
-
-$functions = glob(dirname(__FILE__) . '/functions/*.{php}', GLOB_BRACE);
-foreach ($functions as $function) :
-    require_once($function);
-endforeach;
