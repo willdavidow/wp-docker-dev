@@ -1,9 +1,9 @@
 <?php
 /**
- * Staley Point Capital main template
+ * %%%THEME_NAME%%% main template
  *
- * @package YOUR_THEME_NAME
- * @since Staley Point 1.0
+ * @package %%%PACKAGE_NAME%%%
+ * @since %%%THEME NAME%%% 1.0
  */
 
     $thePage = new WP_Query("pagename=Home");

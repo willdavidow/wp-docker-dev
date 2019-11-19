@@ -9,7 +9,7 @@
     "dev:theme": "node ./scripts/dev.js",
     "dev:scripts": "webpack --mode development --config webpack.config.js --watch",
     "dev:styles": "node-sass-chokidar --include-path node_modules ./src/scss/style.scss -o ./.tmp --quiet --watch & npm run dev:styles-postcss",
-    "dev:styles-postcss": "postcss -u autoprefixer -b 'last 2 versions' ./.tmp/style.css -o ./wp/wp-content/themes/YOUR_THEME_NAME/style.css --watch",
+    "dev:styles-postcss": "postcss -u autoprefixer -b 'last 2 versions' ./.tmp/style.css -o ./wp/wp-content/themes/%%%PACKAGE_NAME%%%/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Will Davidow <w.davidow@gmail.com>",

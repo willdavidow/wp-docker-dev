@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * @package YOUR_THEME_NAME
- * @since YOUR_THEME_NAME 1.0
+ * @package %%%PACKAGE_NAME%%%
+ * @since %%%PACKAGE_NAME%%% 1.0
  */
 
 $pageTitle = get_field('page_title');

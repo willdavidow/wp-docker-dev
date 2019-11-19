@@ -1,8 +1,8 @@
 <?php
 /**
- * Staley Point functions and definitions
+ * %%%THEME_NAME%%% functions and definitions
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 @ini_set( 'upload_max_size' , '64M' );

@@ -1,9 +1,9 @@
 <header class="global-header__container">
     <h1 class="global-header__title logo">
-        <a href="/">Staley Point Capital</a>
+        <a href="/">%%%THEME_NAME%%%</a>
     </h1>
     <nav id="main-nav" class="global-header__nav" role="navigation">
-        <a href="/" class="mobile-logo"><span class="visually-hidden">Staley Point Capital</span></a>
+        <a href="/" class="mobile-logo"><span class="visually-hidden">%%%THEME_NAME%%%</span></a>
         <button href="#" id="nav-drawer" role="button" class="global-header__nav-drawer">
             <span class="global-header__nav-drawer-bar global-header__nav-drawer-bar-top"></span>
             <span class="global-header__nav-drawer-bar global-header__nav-drawer-bar-mid"></span>

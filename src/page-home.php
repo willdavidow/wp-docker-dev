@@ -2,7 +2,7 @@
 
 /**
  * Template Name: Home
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@ const chokidar = require('chokidar');
 const fs = require('fs-extra');
 const path = require('path');
 
-const themeDirectory = './wp/wp-content/themes/YOUR_THEME_NAME';
+const themeDirectory = './wp/wp-content/themes/%%%PACKAGE_NAME%%%';
 const watchPaths = [
     './src/**/*.(php|inc|png|jpg|gif|svg)'
 ];

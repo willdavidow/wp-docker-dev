@@ -2,7 +2,7 @@
 /**
  * Init functions
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 if ( ! function_exists( 'spcap_setup' ) ) :
@@ -11,8 +11,8 @@ function spcap_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'YOUR_THEME_NAME' ),
-        'footer' => __('Footer Menu', 'YOUR_THEME_NAME' )
+		'primary' => __( 'Primary Menu', '%%%PACKAGE_NAME%%%' ),
+        'footer' => __('Footer Menu', '%%%PACKAGE_NAME%%%' )
 	) );
 }
 add_action( 'after_setup_theme', 'spcap_setup' );

@@ -4,7 +4,7 @@
  * Hide content editor on pages specified in $page array
  * (because we're using Advanced Custom Fields for everything).
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 add_action('admin_init', 'hide_editor');

@@ -3,7 +3,7 @@
  * Remove comments and posts from side bar
  * Re-order admin side nav items
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 function my_remove_admin_menus() {

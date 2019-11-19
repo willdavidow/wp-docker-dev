@@ -2,7 +2,7 @@
 /**
  * Register Case Study Post Type
  *
- * @package YOUR_THEME_NAME
+ * @package %%%PACKAGE_NAME%%%
  */
 
 function post_type_case_study() {
