@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./dist & rimraf ./.tmp",
+    "setup": "node ./scripts/setup.js",
     "dev": "npm run clean && npm run dev:theme & npm run dev:scripts & npm run dev:styles",
     "dev:theme": "node ./scripts/dev.js",
     "dev:scripts": "webpack --mode development --config webpack.config.js --watch",
@@ -22,6 +23,7 @@
     "breakpoint-sass": "^2.7.1",
     "chokidar": "^3.3.0",
     "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
     "node-sass": "^4.13.0",
     "node-sass-chokidar": "^1.4.0",
     "postcss-cli": "^6.1.3",

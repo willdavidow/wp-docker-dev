@@ -2,11 +2,26 @@
 Theme Name: %%%THEME_NAME%%%
 Author: %%%AUTHOR_NAME%%%
 Author URI: %%%AUTHOR_URL%%%
-Description: %%%THEME_NAME%%%
+Description: ...
 Version: 1.0.0
 */
 
 // staley cap styles
 @import 'vars';
 @import 'global';
-@import 'pages/home';
+
+* {
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    font: {
+        size: 16px;
+        weight: normal;
+    };
+}
