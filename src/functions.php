@@ -29,5 +29,5 @@ if ( ! function_exists( 'theme_setup' ) ) :
         wp_enqueue_script('app-main', get_template_directory_uri() . '/app.bundle.js', null, null, true);
     }
     
-    add_action( 'wp_enqueue_scripts', theme_styles_scripts' );
+    add_action( 'wp_enqueue_scripts', 'theme_styles_scripts' );
     
