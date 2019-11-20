@@ -1,5 +1,11 @@
 const inquirer = require('inquirer');
 const replace = require('replace-in-file');
+const defaults = {
+    authorName: 'Biff Tannen',
+    authorURI: 'www.bifftannen.info',
+    packageName: 'back-to-the-future',
+    themeName: 'Back to the Future',
+};
 const replacements = {
     REPLACE_PACKAGE_NAME: '%%%PACKAGE_NAME%%%',
     REPLACE_THEME_NAME: '%%%THEME_NAME%%%',
@@ -52,31 +58,30 @@ const updatePaths = (answers) => {
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_AUTHOR,
-        to: answers.authorName,
+        to: answers.authorName.length > 0 ? answers.authorName : defaults.authorName,
         dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_AUTHOR_URI,
-        to: answers.authorURI,
+        to: answers.authorURI.length > 0 ? answers.authorURI : defaults.authorURI,
         dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_PACKAGE_NAME,
-        to: answers.packageName,
+        to: answers.packageName.length > 0 ? answers.packageName : defaults.packageName,
         dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_THEME_NAME,
-        to: answers.themeName,
+        to: answers.themeName.length > 0 ? answers.themeName : defaults.themeName,
         dry: true,
     }));
 };
   
 inquirer.prompt(questions)
     .then(answers => {
-        // setup = answers;
         updatePaths(answers);
     });
