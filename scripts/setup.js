@@ -59,25 +59,25 @@ const updatePaths = (answers) => {
         files,
         from: replacements.REPLACE_AUTHOR,
         to: answers.authorName.length > 0 ? answers.authorName : defaults.authorName,
-        dry: true,
+        // dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_AUTHOR_URI,
         to: answers.authorURI.length > 0 ? answers.authorURI : defaults.authorURI,
-        dry: true,
+        // dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_PACKAGE_NAME,
         to: answers.packageName.length > 0 ? answers.packageName : defaults.packageName,
-        dry: true,
+        // dry: true,
     }));
     console.log(replace.sync({
         files,
         from: replacements.REPLACE_THEME_NAME,
         to: answers.themeName.length > 0 ? answers.themeName : defaults.themeName,
-        dry: true,
+        // dry: true,
     }));
 };
   
