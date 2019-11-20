@@ -6,9 +6,9 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( '%%%PACKAGE_NAME%%%_setup' ) ) :
+if ( ! function_exists( 'theme_setup' ) ) :
 
-    function %%%PACKAGE_NAME%%%_setup() {
+    function theme_setup() {
     
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
@@ -16,7 +16,7 @@ if ( ! function_exists( '%%%PACKAGE_NAME%%%_setup' ) ) :
             'footer' => __('Footer Menu', '%%%PACKAGE_NAME%%%' )
         ) );
     }
-    add_action( 'after_setup_theme', '%%%PACKAGE_NAME%%%_setup' );
+    add_action( 'after_setup_theme', 'theme_setup' );
     
     endif;
     
@@ -24,10 +24,10 @@ if ( ! function_exists( '%%%PACKAGE_NAME%%%_setup' ) ) :
     /*
      * Enqueue scripts and styles.
      */
-    function %%%PACKAGE_NAME%%%_styles_scripts() {
-        wp_enqueue_style('%%%PACKAGE_NAME%%%-style', get_template_directory_uri() . '/style.css');
+    function theme_styles_scripts() {
+        wp_enqueue_style('theme-style', get_template_directory_uri() . '/style.css');
         wp_enqueue_script('app-main', get_template_directory_uri() . '/app.bundle.js', null, null, true);
     }
     
-    add_action( 'wp_enqueue_scripts', '%%%PACKAGE_NAME%%%_styles_scripts' );
+    add_action( 'wp_enqueue_scripts', theme_styles_scripts' );
     
