@@ -14,8 +14,8 @@ const replacements = {
 };
 const files = [
     'package.json',
-    'scripts/build.php',
-    'scripts/dev.php',
+    'scripts/build.js',
+    'scripts/dev.js',
     'src/index.php',
     'src/functions.php',
     'src/footer.php',
