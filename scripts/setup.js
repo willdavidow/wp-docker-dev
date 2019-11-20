@@ -22,6 +22,7 @@ const files = [
     'src/header.php',
     'src/scss/style.scss',
     'src/scss/_vars.scss',
+    'webpack.config.js',
 ];
 
 const validatePackageName = (input) => {
