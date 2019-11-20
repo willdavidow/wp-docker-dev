@@ -57,25 +57,25 @@ const questions = [
 const updatePaths = (answers) => {
     console.log(replace.sync({
         files,
-        from: replacements.REPLACE_AUTHOR,
+        from: /replacements.REPLACE_AUTHOR/g,
         to: answers.authorName.length > 0 ? answers.authorName : defaults.authorName,
         // dry: true,
     }));
     console.log(replace.sync({
         files,
-        from: replacements.REPLACE_AUTHOR_URI,
+        from: /replacements.REPLACE_AUTHOR_URI/g,
         to: answers.authorURI.length > 0 ? answers.authorURI : defaults.authorURI,
         // dry: true,
     }));
     console.log(replace.sync({
         files,
-        from: replacements.REPLACE_PACKAGE_NAME,
+        from: /replacements.REPLACE_PACKAGE_NAME/g,
         to: answers.packageName.length > 0 ? answers.packageName : defaults.packageName,
         // dry: true,
     }));
     console.log(replace.sync({
         files,
-        from: replacements.REPLACE_THEME_NAME,
+        from: /replacements.REPLACE_THEME_NAME/g,
         to: answers.themeName.length > 0 ? answers.themeName : defaults.themeName,
         // dry: true,
     }));
