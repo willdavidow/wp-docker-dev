@@ -37,51 +37,58 @@ const questions = [
     {
         type: 'input',
         name: 'packageName',
-        message: "WP theme package name? (ex. package-name)",
+        message: "WP theme package name? (default: package-name)",
         validate: validatePackageName,
     },
     {
         type: 'input',
         name: 'themeName',
-        message: "WP theme name? (ex. Theme Name)",
+        message: "WP theme name? (default: Theme Name)",
     },
     {
         type: 'input',
         name: 'authorName',
-        message: "Theme author name (ex. Biff Tannen)?",
+        message: "Theme author name (default: Biff Tannen)?",
     },
     {
         type: 'input',
         name: 'authorURI',
-        message: "Theme author URI? (ex. www.bifftannen.info)",
+        message: "Theme author URI? (default: www.bifftannen.info)",
     },
 ];
 
 const updatePaths = (answers) => {
-    console.log(replace.sync({
+
+    const authorName = answers.authorName.length > 0 ? answers.authorName : defaults.authorName;
+    const authorURI = answers.authorURI.length > 0 ? answers.authorURI : defaults.authorURI;
+    const packageName = answers.packageName.length > 0 ? answers.packageName : defaults.packageName;
+    const themeName = answers.themeName.length > 0 ? answers.themeName : defaults.themeName;
+    replace.sync({
         files,
         from: new RegExp(replacements.REPLACE_AUTHOR, 'g'),
-        to: answers.authorName.length > 0 ? answers.authorName : defaults.authorName,
-        // dry: true,
-    }));
-    console.log(replace.sync({
+        to: authorName,
+    });
+    replace.sync({
         files,
         from: new RegExp(replacements.REPLACE_AUTHOR_URI, 'g'),
-        to: answers.authorURI.length > 0 ? answers.authorURI : defaults.authorURI,
-        // dry: true,
-    }));
-    console.log(replace.sync({
+        to: authorURI,
+    });
+    replace.sync({
         files,
         from: new RegExp(replacements.REPLACE_PACKAGE_NAME, 'g'),
-        to: answers.packageName.length > 0 ? answers.packageName : defaults.packageName,
-        // dry: true,
-    }));
-    console.log(replace.sync({
+        to: packageName,
+    });
+    replace.sync({
         files,
         from: new RegExp(replacements.REPLACE_THEME_NAME, 'g'),
-        to: answers.themeName.length > 0 ? answers.themeName : defaults.themeName,
-        // dry: true,
-    }));
+        to: themeName,
+    });
+
+    console.log('Theme setup complete:');
+    console.log(`Package Name ${packageName}`);
+    console.log(`Theme Name ${themeName}`);
+    console.log(`Author Name ${authorName}`);
+    console.log(`Author URI ${authorURI}`);
 };
   
 inquirer.prompt(questions)
