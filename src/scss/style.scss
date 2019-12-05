@@ -6,22 +6,6 @@ Description: ...
 Version: 1.0.0
 */
 
-// staley cap styles
+@import 'reset';
 @import 'vars';
 @import 'global';
-
-* {
-    &:before,
-    &:after {
-        box-sizing: border-box;
-    }
-}
-
-html,
-body {
-    margin: 0;
-    font: {
-        size: 16px;
-        weight: normal;
-    };
-}

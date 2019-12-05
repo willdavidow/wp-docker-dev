@@ -7,13 +7,13 @@
  */
 ?>
 
-</div><!-- #content -->
+</div>
 
 <footer id="colophon" class="site-footer">
     footer
-</footer><!-- #colophon -->
+</footer>
 
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 
