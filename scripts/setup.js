@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const replace = require('replace-in-file');
 const defaults = {
@@ -88,8 +89,12 @@ const updatePaths = (answers) => {
     console.log(`Package Name ${packageName}`);
     console.log(`Theme Name ${themeName}`);
     console.log(`Author Name ${authorName}`);
-    console.log(`Author URI ${authorURI}`);
+    console.log(`----------------------------`);
+    console.log(`Removed .git directory; make sure you run git init and link up to your own remote!`);
 };
+  
+// remove .git directory from this repository
+fs.remove('.git')
   
 inquirer.prompt(questions)
     .then(answers => {
