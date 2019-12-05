@@ -35,12 +35,12 @@ watcher
     })
     .on('change', (filePath) => {
         const file = trimBaseDirectory(filePath);
-        try {
-            fs.copySync(path.resolve(filePath), path.resolve(`${themeDirectory}/${file}`));
-            console.log(`updated: ${themeDirectory}/${file}`);
-        } catch(err) {
-            console.log(`Error copying: ${filePath}\n Error Message: ${err}`);
-        }
+        // try {
+        fs.copySync(path.resolve(filePath), path.resolve(`${themeDirectory}/${file}`));
+        console.log(`updated: ${themeDirectory}/${file}`);
+        // } catch(err) {
+        //     console.log(`Error copying: ${filePath}\n Error Message: ${err}`);
+        // }
         // fs
         //     .copy(filePath, path.resolve(`${themeDirectory}/${file}`))
         //     .then(() => console.log(`updated: ${file}`))
