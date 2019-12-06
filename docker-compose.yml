@@ -9,6 +9,7 @@ services:
   # Container 1
   # https://hub.docker.com/_/mysql
   db:
+    container_name: wpmysql
     # Image name (optinally version)
     # https://docs.docker.com/compose/compose-file/#image
     image: mysql:5.7
