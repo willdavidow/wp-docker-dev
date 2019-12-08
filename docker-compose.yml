@@ -53,6 +53,8 @@ services:
     # Useful for file edits
     # We're only mapping wp-content because 
     # this setup doesn't need to access the WP core files
+    # IF YOU NEED to access the WP core files, just remove
+    # the /wp-content portion of the volume specification.
     volumes: ["./wp:/var/www/html/wp-content"]
     # Add environment variables
     # https://docs.docker.com/compose/compose-file/#environment
