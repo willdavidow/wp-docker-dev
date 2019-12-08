@@ -9,6 +9,8 @@ services:
   # Container 1
   # https://hub.docker.com/_/mysql
   db:
+    # Naming isn't necessary, but this helps with scripting mysql database dumps
+    container_name: mysql_%%%PACKAGE_NAME%%%
     # Image name (optinally version)
     # https://docs.docker.com/compose/compose-file/#image
     image: mysql:5.7
@@ -49,9 +51,11 @@ services:
     # https://docs.docker.com/compose/compose-file/#volumes
     # Maps your local folder, to path in a container
     # Useful for file edits
-    # I like to map only wp-content
-    # We should not care about WP core files
-    volumes: ["./wp:/var/www/html"]
+    # We're only mapping wp-content because 
+    # this setup doesn't need to access the WP core files
+    # IF YOU NEED to access the WP core files, just remove
+    # the /wp-content portion of the volume specification.
+    volumes: ["./wp:/var/www/html/wp-content"]
     # Add environment variables
     # https://docs.docker.com/compose/compose-file/#environment
     environment:

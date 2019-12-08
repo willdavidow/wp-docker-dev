@@ -14,6 +14,7 @@ const replacements = {
     REPLACE_AUTHOR_URI: '%%%AUTHOR_URI%%%'
 };
 const files = [
+    'docker-compose.yml',
     'package.json',
     'scripts/build.js',
     'scripts/dev.js',
