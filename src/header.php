@@ -22,7 +22,7 @@
     <?php wp_body_open(); ?>
     <div id="page" class="site">
         <header id="masthead" class="header">
-            Header
+            header
         </header>
 
         <div id="content" class="site-content">
