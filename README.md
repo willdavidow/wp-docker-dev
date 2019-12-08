@@ -103,6 +103,6 @@ In the second terminal window (after you've verified that the Wordpress instance
 
 ### Other Stuff
 
-For convenience, `npm run export-db` will generate a sql file for use when deploying your site to a live URL. This will help in moving your data more easily than dealing with SQL clients or phpMyAdmin.
+For convenience, `npm run export-db` will generate a sql file for use when deploying your site to a live URL. This will help in moving your data more easily than dealing with SQL clients or phpMyAdmin. **Note**: Your server (`npm run docker:wp`) must be running (or if you're fancy, you'll need to mount the database container specifically) to export the database.
 
 Suggestions in the form of issues and/or pull requests are absolutely welcome.
