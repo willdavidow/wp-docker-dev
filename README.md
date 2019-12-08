@@ -3,7 +3,7 @@
 ## Overview
 
 This is project is a simple and configurable (but slightliy opinionated) local
-dev setup for WordPress theme developmen. I've been using this mysql and
+dev setup for WordPress theme development. I've been using this mysql and
 decided to make configurable and release into the wild.
 
 ### Getting Started
@@ -34,9 +34,9 @@ You won't need to make any changes in this directory, but the scripts in here ar
 
 #### src
 
-This is the directory where all your theme development should take place. Its contents will be copied into your Wordpress themes folder, and with the `dev` **npm** script running it will monitor all files for changes and move them over as-needed. 
+This is the directory where all your theme development should take place. Its contents will be copied into your Wordpress themes folder, and with the `dev` **npm** script running it will monitor all files for changes and move them over as-needed.
 
-**Important Note**: I can't stress enough that all theme development should take place within the `src` directory. Never work in the Wordpress (`/wp-content/themes/{your-theme}`) instance. Files in the Wordpress instance will be overwritten if you stop and restart the `dev` **npm** command, or when you make changes to the same file(s) within the `src` directory. 
+**Important Note**: I can't stress enough that all theme development should take place within the `src` directory. Never work in the Wordpress (`/wp-content/themes/{your-theme}`) instance. Files in the Wordpress instance will be overwritten if you stop and restart the `dev` **npm** command, or when you make changes to the same file(s) within the `src` directory.
 
 *TL;DR* The `src` directory is where you should work. Always. Never `/wp-content/themes/{your-theme}`.
 
@@ -94,7 +94,7 @@ Now you're ready to kick things off. Open up a split terminal window (or two sep
 
 In the first terminal window, run `npm run docker:wp`. This command runs `docker-compose up` (in attached mode - keeping the server output running). On first-run, it will pull down any necessary packages and set up your containers. Once docker-compose is done doing it's thing, you'll be able to hit [http://localhost:3000](http://localhost:3000) and you'll be prompted with the standard Wordpress first-run installation page and process. You're done setting up your Wordpress server now.
 
-In the second terminal window (after you've verified that the Wordpress instance is live in-browser), run `npm run dev`. This command does runs a few things: 
+In the second terminal window (after you've verified that the Wordpress instance is live in-browser), run `npm run dev`. This command does runs a few things:
 
 - A process to copy all files, and listen to changes, in the `src` directory into a theme within the Wordpress folder. The theme folder will be the `Package Name` you specified when running `setup`.
 - SCSS compilation (copied directly to theme folder after compilation)
@@ -103,6 +103,6 @@ In the second terminal window (after you've verified that the Wordpress instance
 
 ### Other Stuff
 
-For convenience, `npm run export-db` will generate a sql file for use when deploying your site to a live URL. This will help in moving your data more easily than dealing with SQL clients or phpMyAdmin. **Note**: Your server (`npm run docker:wp`) must be running (or if you're fancy, you'll need to mount the database container specifically) to export the database.
+For convenience, `npm run docker:export-db` will generate a sql file for use when deploying your site to a live URL. This will help in moving your data more easily than dealing with SQL clients or phpMyAdmin. **Note**: Your server (`npm run docker:wp`) must be running (or if you're fancy, you'll need to mount the database container specifically) to export the database.
 
 Suggestions in the form of issues and/or pull requests are absolutely welcome.
