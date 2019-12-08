@@ -96,7 +96,7 @@ In the first terminal window, run `npm run docker:wp`. This command runs `docker
 
 In the second terminal window (after you've verified that the Wordpress instance is live in-browser), run `npm run dev`. This command does runs a few things: 
 
--A process to copy all files, and listen to changes, in the `src` directory into a theme within the Wordpress folder. The theme folder will be the `Package Name` you specified when running `setup`.
+- A process to copy all files, and listen to changes, in the `src` directory into a theme within the Wordpress folder. The theme folder will be the `Package Name` you specified when running `setup`.
 - SCSS compilation (copied directly to theme folder after compilation)
 - JS compilation (copied directly to theme folder after compilation)
 - BrowserSync so that you don't have to hit refresh all the time.
