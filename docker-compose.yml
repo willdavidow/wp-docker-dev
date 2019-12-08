@@ -51,9 +51,9 @@ services:
     # https://docs.docker.com/compose/compose-file/#volumes
     # Maps your local folder, to path in a container
     # Useful for file edits
-    # I like to map only wp-content
-    # We should not care about WP core files
-    volumes: ["./wp:/var/www/html"]
+    # We're only mapping wp-content because 
+    # this setup doesn't need to access the WP core files
+    volumes: ["./wp:/var/www/html/wp-content"]
     # Add environment variables
     # https://docs.docker.com/compose/compose-file/#environment
     environment:
