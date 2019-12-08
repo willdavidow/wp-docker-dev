@@ -99,7 +99,7 @@ In the second terminal window (after you've verified that the Wordpress instance
 - A process to copy all files, and listen to changes, in the `src` directory into a theme within the Wordpress folder. The theme folder will be the `Package Name` you specified when running `setup`.
 - SCSS compilation (copied directly to theme folder after compilation)
 - JS compilation (copied directly to theme folder after compilation)
-- BrowserSync so that you don't have to hit refresh all the time.
+- BrowserSync so you don't have to hit refresh all the time.
 
 ### Other Stuff
 
