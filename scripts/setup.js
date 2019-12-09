@@ -39,23 +39,23 @@ const questions = [
     {
         type: 'input',
         name: 'packageName',
-        message: "WP theme package name? (default: back-to-the-future)",
+        message: `WP theme package name? (default: ${defaults.packageName}`,
         validate: validatePackageName,
     },
     {
         type: 'input',
         name: 'themeName',
-        message: "WP theme name? (default: Back to the Future)",
+        message: `WP theme name? (default: ${defaults.themeName})`,
     },
     {
         type: 'input',
         name: 'authorName',
-        message: "Theme author name (default: Biff Tannen)?",
+        message: `Theme author name (default: ${defaults.authorName})?`,
     },
     {
         type: 'input',
         name: 'authorURI',
-        message: "Theme author URI? (default: www.bifftannen.info)",
+        message: `Theme author URI? (default: ${defaults.authorURI})`,
     },
 ];
 
