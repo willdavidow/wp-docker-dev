@@ -27,7 +27,7 @@ The base requirements to run development out of this project are:
 
 The structure of this project is important to understanding how theme development takes place.
 
-**Important Note**: All development should take place within the `src` directory. Never work in the Wordpress instance, as files there will be overwritten if you stop and restart the `npm run dev` command, or if you make changes to the same file(s) within the `src` directory. TL;DR the `src` directory is where you should work. Never `wp/wp-content/themes/{your-theme}`.
+**Important Note**: All development should take place within the `src` directory. Never work in the Wordpress instance, as files there will be overwritten if you stop and restart the `npm run dev` command, or if you make changes to the same file(s) within the `src` directory. TL;DR the `src` directory is where you should work. Never `/wp//themes/{your-theme}`.
 
 ```
 - wp-docker-dev
@@ -35,6 +35,7 @@ The structure of this project is important to understanding how theme developmen
 | /src
 |  /js
 |  /scss
+| /wp
 ```
 
 #### scripts
@@ -45,9 +46,9 @@ You won't need to make any changes in this directory, but the scripts in here ar
 
 This is the directory where all your theme development should take place. Its contents will be copied into your Wordpress themes folder, and with the `dev` **npm** script running it will monitor all files for changes and move them over as-needed.
 
-**Important Note**: I can't stress enough that all theme development should take place within the `src` directory. Never work in the Wordpress (`/wp-content/themes/{your-theme}`) instance. Files in the Wordpress instance will be overwritten if you stop and restart the `dev` **npm** command, or when you make changes to the same file(s) within the `src` directory.
+**Important Note**: I can't stress enough that all theme development should take place within the `src` directory. Never work in the Wordpress (`/wp/themes/{your-theme}`) instance. Files in the Wordpress instance will be overwritten if you stop and restart the `dev` **npm** command, or when you make changes to the same file(s) within the `src` directory.
 
-*TL;DR* The `src` directory is where you should work. Always. Never `/wp-content/themes/{your-theme}`.
+*TL;DR* The `src` directory is where you should work. Always. Never `/wp/themes/{your-theme}`.
 
 #### src/js
 
@@ -56,6 +57,10 @@ This is where your Javascript should be developed. It will get compiled with **b
 #### src/scss
 
 This is where you styles should be developed. It will get compiled and moved to the project theme directory every time you save changes.
+
+#### wp
+
+This is the dockerized wordpres instance. By default the wp-content folder is mapped here since we don't ever need to deal with Wordpress core files. If you do need to modify Wordpress core files, you'll need to adjust the mapping in `docker-compose.yml`
 
 #### General /src directory information
 
