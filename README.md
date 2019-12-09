@@ -64,7 +64,7 @@ This is the dockerized wordpres instance. By default the wp-content folder is ma
 
 #### General /src directory information
 
-The `dev` and `build` npm scripts are set up to look for changes in in any directories within the `/src` directory. The current list of file extensions it will listen for and copy-over includes: `php`, `inc`, `png`, `jpg`, `gif`, and `svg`. If you need other file types copied over, you'll need to add them to the `dev` and `build` scripts in the `/scripts` folder. **Note** `css` and `js` are intentionally excluded, as those are copied over during compilation from webpack and node-sass.
+The `dev` and `build` npm scripts are set up to look for changes in in any directories within the `/src` directory. The current list of file extensions it will listen for and copy-over includes: `php`, `inc`, `png`, `jpg`, `gif`, and `svg`. You may add files and directories as you see fit and they will be copied to your theme directory with the same folder architecture. If you need other file types copied over, you'll need to add them to the `dev` and `build` scripts in the `/scripts` folder. **Note** `css` and `js` are intentionally excluded, as those are copied over during compilation from webpack and node-sass.
 
 ### Homebrew, Docker and docker-compose
 

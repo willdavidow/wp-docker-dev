@@ -39,13 +39,13 @@ const questions = [
     {
         type: 'input',
         name: 'packageName',
-        message: "WP theme package name? (default: package-name)",
+        message: "WP theme package name? (default: back-to-the-future)",
         validate: validatePackageName,
     },
     {
         type: 'input',
         name: 'themeName',
-        message: "WP theme name? (default: Theme Name)",
+        message: "WP theme name? (default: Back to the Future)",
     },
     {
         type: 'input',
