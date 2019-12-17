@@ -16,7 +16,7 @@ services:
     image: mysql:5.7
     # Define restart policy
     # https://docs.docker.com/compose/compose-file/#restart
-    restart: always
+    restart: no
     # Volumes definition
     # Named volume, allows persisted data but without caring where locally it is stored
     # https://nickjanetakis.com/blog/docker-tip-28-named-volumes-vs-path-based-volumes
@@ -46,7 +46,7 @@ services:
     image: wordpress
     # Define restart policy
     # https://docs.docker.com/compose/compose-file/#restart
-    restart: always
+    restart: no
     # Volumes definition
     # https://docs.docker.com/compose/compose-file/#volumes
     # Maps your local folder, to path in a container
@@ -82,7 +82,7 @@ services:
     image: phpmyadmin/phpmyadmin
     # Define restart policy
     # https://docs.docker.com/compose/compose-file/#restart
-    restart: always
+    restart: no
     # Ports mapping
     ports:
       - 8080:80
